@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.banner {
+    background: white;
+    padding: 100px 100px 100px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: url("../resources/images/banner-image2.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    justify-content: center;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.row1col1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    padding: 50px;
+}
+
+.row1col2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    padding: 50px;
+}
+
+    .row1col2 p {
+        margin-top: 40px;
+    }
+
+.content p {
+    text-align: center;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.content2 {
+    margin-top: 50px;
+    width: 1400px;
+    justify-content: center;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row2col1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+
+.content2 p {
+ 
+    text-align: center;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.row2col2 {
+    max-height: 450px;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fa-phone {
+    font-size: 70px;
+    color: white;
+}
+
+.fa-map {
+    font-size: 70px;
+    color: white;
+    padding: 20px;
+}
+
+@media(max-width: 1040px) {
+
+    .banner {
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .content {
+        justify-content: center;
+        padding-top: 200px;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .row1col1 {
+        width: 75%;
+        padding: 5px;
+    }
+
+    .row1col2 {
+        width: 75%;
+        padding: 5px;
+    }
+
+    .row1col2 p {
+         margin-top: 0px;
+     }
+
+    .content2 {
+        padding-top: 50px;
+        flex-direction: column;
+    }
+
+    .row2col1 {
+        width: 100%;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        border-bottom-left-radius: 0;
+    }
+
+    .row2col2 {
+        width: 100%;
+    }
+
+    .content p {
+        font-size: 12px;
+        text-align: center;
+        color: white;
+    }
+
+    .content2 p {
+        font-size: 12px;
+        text-align: center;
+        color: white;
+    }
+}

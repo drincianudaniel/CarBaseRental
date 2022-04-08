@@ -1,0 +1,104 @@
+﻿@*@model IEnumerable<vehicle>
+*@
+@*@model IEnumerable<CarBase.Models.vehicle>*@
+@using X.PagedList.Mvc.Core;
+@model IPagedList<vehicle>
+@{
+    ViewBag.Title = "Cars";
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/cars.css">
+
+
+    <title>CarBase Rental</title>
+</head>
+<body>
+@*    <div class="banner">
+        <div class="content"> 
+            <div class="searchbox">
+                <input class= "searchbar" type="search" id="search" onblur="getVal()" data-search>
+                <button class="searchb" id = "SearchButton" onclick = "search()"> Search </button>
+            </div>
+            <div class="user-cards">
+                <div class="border-cards"  data-user-cards-container>
+                  <template data-user-template>
+                    <div class="card">
+                      
+                      <ul class="body" data-body>
+                          <li class="header" data-make></li>
+                          <li class="author" data-model></li>
+                      </ul>
+                     <center> <img class="imagine" src="" data-image></center>
+                     <button class="details">View Details</button>
+                    </div>
+                  </template>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+  @*  <table style="margin-top:100px;" class="table">
+  <thead>
+    <tr>
+      <th scope="col">vehicleID</th>
+      <th scope="col">Model</th>
+      <th scope="col">Year</th>
+      <th scope="col">HorsePower</th>
+      <th scope="col">RentStatus</th>
+    </tr>
+  </thead>
+  <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td>@obj.vehicleID</td>
+                <td>@obj.Model</td>   
+                <td>@obj.year</td>
+                <td>@obj.horsepower</td>
+                <td>@obj.rent_status</td>
+            </tr>
+        }
+  </tbody>
+</table>*@
+ <div class="banner">
+        <div class="content"> 
+            <div class="searchbox">
+                @*<input class= "searchbar" type="search" id="search" onblur="getVal()" data-search>*@
+                @*<button class="searchb" id = "SearchButton" onclick = "search()"> Search </button>*@
+                @using (Html.BeginForm()){
+                    @Html.TextBox("searchName")
+                    <input type="submit" value="Search" class="searchb"/>
+                }
+                <a asp-controller="Cars" asp-action="CarsManage"><button class="searchb" >Insert Car</button></a>
+            </div>
+            <div class="user-cards">
+                <div class="border-cards">
+                @foreach(var obj in Model){
+                    <div class="card">
+                      <ul class="body">
+                          <li class="header">
+                          @Html.DisplayFor(modelItem=> obj.Model)</li>
+                          <li class="author">@obj.horsepower</li>
+                          <li class="author">@obj.make.name</li>
+                          <li class="author">@obj.engine.type @obj.engine.size</li>
+                          <li class="author">@obj.type.name</li>
+                      </ul>
+                     <center> <img class="imagine" src="@obj.img_url"></center>
+                     <a asp-action="CarsDetails" asp-route-id="@obj.vehicleID"><button class="details">View Details</button></a>
+                    </div>
+                     }
+                </div>
+                 <div>@Html.PagedListPager(Model, page => Url.Action("Cars", new { page, searchName = Context.Request.Query["searchName"]}))</div>
+            </div>
+               <div>@*Page @(Model.PageCount < Model.PageNumber ? 0: Model.PageNumber)/@Model.PageCount)*@</div>
+               
+            </div>
+    </div>
+
+</body>
+</html>

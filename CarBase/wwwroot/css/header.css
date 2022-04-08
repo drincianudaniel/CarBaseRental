@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+*
+{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 10;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+}
+
+.logo{
+    position: relative;
+}
+
+.header-menu, .header-login{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.header-menu li, .header-login li{
+  list-style: none;
+}
+
+.header-menu li:not(:first-child)
+{
+    margin-left: 10px;
+}
+
+.header-menu li a{
+  font-size: 20px;
+  color:rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 30px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.header-login a{
+    font-size: 20px;
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 30px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}   
+
+
+.header-menu a:hover, .header-login a:hover{
+    background-color: rgba(186, 14, 230, 0.486);
+    padding-bottom: 20px;
+}
+
+
+@media(max-width: 1040px){
+    header{
+        flex-direction: column;
+    }
+
+    .header-menu li a{
+        padding: 0px;
+      }
+      
+      .header-login a{
+        padding: 0px;
+      }   
+
+      .header-menu a:hover, .header-login a:hover{
+        background-color: rgba(186, 14, 230, 0.486);
+        padding-bottom: 0px;
+    }
+
+}

@@ -1,0 +1,26 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style-type: none;
+}
+
+
+.banner {
+    background: rgb(224, 111, 111);
+    padding: 100px 100px 100px;
+    min-height: 100vh;
+    display: flex;
+    width: 100%;
+    background: url("../resources/images/banner-image2.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100vw;
+}

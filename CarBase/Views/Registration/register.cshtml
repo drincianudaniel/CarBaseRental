@@ -1,0 +1,63 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CarBase.Models.Users;
+@{
+    Layout = null;
+}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/register.css">
+    <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
+
+    <title>Register</title>
+</head>
+<body>
+
+     <header>
+        <a class="logo" asp-controller="Home" asp-action="Index"><image src="../resources/images/carbasewhite.png"></image></a>
+        <ul class = "header-menu">
+            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-controller="Cars" asp-action="Cars">Cars</a></li>
+            <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+            <li><a asp-controller="Home" asp-action="desktopapp">Desktop Application</a></li>
+        </ul>
+        <ul class = "header-login">
+            <li><a a asp-controller="Registration" asp-action="login">Login</a></li>
+        </ul>
+    </header>
+
+    <div class="banner">
+        <div class="box">
+        <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <span class="text-center">Sign Up</span>
+            <div class="input-container">
+                <input type="text" required="" asp-for="FullName"/>
+                <label>Full Name</label>
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="input-container">
+                <input type="mail" required="" asp-for="email"/>
+                <label>Email</label>
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="input-container">
+                <input type="text" required="" asp-for="username"/>
+                <label>Username</label>	
+                <span asp-validation-for="username" class="text-danger"></span>
+            </div>
+            <div class="input-container">
+                <input type="password" required="" asp-for="password"/>
+                <label>Password</label>		
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+                <button type="submit" class="btn">submit</button>
+        </form>	
+        </div>
+    </div>
+</body>
+</html>

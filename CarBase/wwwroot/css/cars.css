@@ -1,0 +1,219 @@
+*
+{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style-type: none;
+}
+
+
+.banner {
+    background: rgb(224, 111, 111);
+    padding: 100px 100px 100px;
+    min-height: 100vh;
+    display: flex;
+    width: 100%;
+    background: url("../resources/images/banner-image2.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width:100vw;
+}
+
+.searchbox{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+input {
+    font-size: 1rem;
+    width: 100%;
+}
+  
+.user-cards {
+    padding: 50px;
+    width: 100%;
+}
+
+.border-cards
+{
+	display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+  
+.card {
+    flex: 1 0 21%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+    padding: .5rem;
+}
+  
+.card > .header {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    margin-bottom: .25rem;
+    text-align: center;
+    
+}
+  
+.card > .body {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+
+}
+  
+.hide {
+    display: none;
+}
+
+
+.imagine{
+      width: 300px;
+      height: 200px;
+}
+
+.details{
+    width: 100%;
+}
+.pagination-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+.pagination {
+    display: compact;
+    padding-left: 0;
+    margin: 0;
+    border-radius: 4px;
+}
+.pagination > li {
+    display: inline-grid;
+ }
+
+        .pagination > li > a,
+        .pagination > li > span {
+            position: relative;
+            float: left;
+            padding: 20px;
+            margin-left: -1px;
+            line-height: 1.428571429;
+            text-decoration: none;
+            background-color: #eee;
+            border: 1px solid #dddddd;
+        }
+
+        .pagination > li:first-child > a,
+        .pagination > li:first-child > span {
+            margin-left: 0;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+        }
+
+        .pagination > li:last-child > a,
+        .pagination > li:last-child > span {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .pagination > li > a:hover,
+        .pagination > li > span:hover,
+        .pagination > li > a:focus,
+        .pagination > li > span:focus {
+            background-color: #eeeeee;
+        }
+
+    .pagination > .active > a,
+    .pagination > .active > span,
+    .pagination > .active > a:hover,
+    .pagination > .active > span:hover,
+    .pagination > .active > a:focus,
+    .pagination > .active > span:focus {
+        z-index: 2;
+        color: #000;
+        cursor: default;
+        background-color: #428bca;
+        border-color: #428bca;
+    }
+
+    .pagination > .disabled > span,
+    .pagination > .disabled > a,
+    .pagination > .disabled > a:hover,
+    .pagination > .disabled > a:focus {
+        color: #999999;
+        cursor: not-allowed;
+        background-color: #eee;
+        border-color: #dddddd;
+    }
+
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+    padding: 0;
+    font-size: 18px;
+}
+
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+    padding: 0;
+    font-size: 12px;
+}
+
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+@media(max-width: 991px){
+    .banner{
+        flex-direction: column;
+        padding : 0;
+    }
+    .content{
+        margin-top: 200px
+    }
+
+    .user-cards {
+        padding: 10px;
+        width: 100%;
+    }
+    
+}

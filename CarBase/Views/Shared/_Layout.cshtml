@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - CarBase</title>
+    <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true" />
+
+</head>
+<body>
+   <header>
+        <a class="logo" asp-controller="Home" asp-action="Index"><image src="../resources/images/carbasewhite.png"></image></a>
+        <ul class = "header-menu">
+            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-controller="Cars" asp-action="Cars">Cars</a></li>
+            <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+            <li><a asp-controller="Home" asp-action="desktopapp">Desktop Application</a></li>
+        </ul>
+        <ul class = "header-login">
+            <li><a a asp-controller="Registration" asp-action="login">Login</a></li>
+        </ul>
+    </header>
+
+    @RenderBody()
+ 
+    <footer>
+        <p>CarBase.com</p>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

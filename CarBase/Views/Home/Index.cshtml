@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="~/css/index.css">
+
+    <title>CarBase Rental</title>
+</head>
+<body>
+
+    <div class="banner">
+        <div class="content"> 
+           <p> 
+               Rent cars, today.
+           </p>
+        </div>
+    </div>
+
+    <div class="offer">
+        <p>What we offer</p> 
+        <div class="offer-content">
+            <a asp-controller="Cars" asp-action="Cars">
+                <section>
+                    <image class="car" src ="../resources/images/car.jpg"></image>
+                    <p>WIDE VARIETY <br> OF CARS</p>
+                </section>
+            </a>
+            <a asp-controller="Cars" asp-action="Cars">
+                <section>
+                    <image class="rent" src ="../resources/images/rent.jpg"></image>
+                    <p>CHEAP <br> RENTALS</p>
+                </section>
+            </a>
+            <a asp-controller="Home" asp-action="desktopapp">
+                <section>
+                    <image class="app" src ="../resources/images/app.png"></image>
+                    <p>DESKTOP <br> APPLICATION</p>
+                </section>
+            </a>
+        </div>
+    </div>
+    
+
+</body>
+</html>

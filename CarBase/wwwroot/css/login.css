@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.banner{
+    background: rgb(252, 252, 252);
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../resources/images/banner-image2.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.login-content{
+    float: left;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(209, 200, 200);
+    box-sizing: border-box;
+    height: 70vh;
+    width: 50%;
+}
+
+
+.signup-content{
+    float: left;
+    display: flex;
+    flex-direction: column;
+    background-color: brown;
+    box-sizing: border-box;
+    height: 70vh;
+    width: 50%;
+    background: url("../resources/images/renting.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.text-center{
+	color:#fff;	
+	text-transform:uppercase;
+    font-size: 23px;
+    margin: -50px 0 80px 0;
+    display: block;
+    text-align: center;
+}
+
+.box{  
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.89);
+	border-radius:3px;;
+    padding:70px 100px;
+    box-sizing: border-box;
+    height: 70vh;
+    width: 100%;
+}
+
+.login-form{
+    margin-top: 150px;
+}
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
+	transition: all 0.5s ease-in-out;
+}
+
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+}
+
+.btn{
+	color:#fff;
+	background-color:#e74c3c;
+	outline: none;
+    border: 0;
+    color: #fff;
+	padding:10px 20px;
+	text-transform:uppercase;
+	margin-top:50px;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+}
+
+.btnSignUp{
+    color:#fff;
+	background-color:#e74c3c;
+	outline: none;
+    border: 0;
+    color: #fff;
+	padding:10px 20px;
+	text-transform:uppercase;
+	margin-top:50px;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+	
+}
+
+.signup-objects{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-objects p{
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 35px;
+    color: aliceblue;
+
+}
+
+@media(max-width: 991px){
+    .banner{
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-direction: normal;
+        -webkit-box-align: center;
+        justify-content: center;
+    }
+    .signup-content{
+        width:100%;
+    }
+    .login-content{
+        width:100%;
+        height: 55%;
+    }
+
+    .login-objects{
+        height: 0px;
+    }
+
+    .login-form{
+        margin-top: 50px;
+    }
+
+    .signup-objects{
+        align-items: center;
+    }
+
+    .signup-objects h1, .signup-objects h3{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+}
+
+@media(max-height: 680px)
+{
+   .login-form{
+       margin-top:50px;
+   }
+    .btn{
+        margin-top: 0px;
+    }
+}

@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+*
+{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.banner{
+    background: white;
+    padding: 100px 100px 100px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url("../resources/images/banner-image2.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner p{
+    color: white;
+    font-size: 100px;
+    font-weight: normal;
+    margin-right: 650px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+.offer{
+    background: white;
+    background-size: cover;
+    background-position: center;
+}
+
+.offer p{
+    font-size: 40px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.offer-content{
+    align-items: center;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    margin-top: 60px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 50px;
+}
+
+.offer-content a{
+    text-decoration:none;
+    color: black;
+}
+
+.offer-content p{
+    font-size: 20px;
+    font-weight: normal;
+}
+.offer-content section{
+    padding: 1rem 1rem 1.5rem;
+    border: 1px solid #CBCBCC;
+}
+
+.offer-content section:hover{
+    border-color: blue;
+}
+.car, .rent, .app  {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+
+@media(max-width: 991px){
+    .banner
+    {
+        padding: 200px 10px 10px;
+        flex-direction: column;
+    }
+
+    .banner p {
+        color: white;
+        font-size: 50px;
+        font-weight: normal;
+        margin-right: 0px;
+        margin-top: 200px;
+       }
+
+    .offer, .offer-content{
+        flex-direction: column;
+    }
+
+    .offer-content{
+        margin-top: 0px;
+        min-height: 1000px;
+        
+    }
+
+    .offer-content section{
+        padding-top: 20px;
+        width:234px;
+    }
+
+    .car, .rent, .app  {
+        max-width: 200px;
+    }
+}
+
+@media(max-width: 400px){
+
+    .banner{
+        padding: 200px 10px 10px;
+        flex-direction: column;
+    }
+
+   .banner p {
+    color: white;
+    font-size: 60px;
+    font-weight: normal;
+    margin-right: 0px;
+   }
+
+   .offer-content{
+    padding-left: 0px;
+    padding-right: 0px;
+    
+    }
+}
+

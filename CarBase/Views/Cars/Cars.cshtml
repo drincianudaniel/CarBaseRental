@@ -69,11 +69,12 @@
         <div class="content"> 
             <div class="searchbox">
                 @*<input class= "searchbar" type="search" id="search" onblur="getVal()" data-search>*@
-                @*<button class="searchb" id = "SearchButton" onclick = "search()"> Search </button>*@
-                @using (Html.BeginForm()){
-                    @Html.TextBox("searchName")
-                    <input type="submit" value="Search" class="searchb"/>
-                }
+                <form action="/Cars/Cars" method="post" class="searchbox">
+                    @*@Html.TextBox("searchName")*@
+                    @*<input type="submit" value="Search" class="searchb"/>*@
+                    <input class="searchbar" id="searchName" name="searchName" type="text" value="">
+                    <button class="searchb" id = "SearchButton"> Search </button>
+               </form>
                 <a asp-controller="Cars" asp-action="CarsManage"><button class="searchb" >Insert Car</button></a>
             </div>
             <div class="user-cards">
@@ -90,6 +91,8 @@
                       </ul>
                      <center> <img class="imagine" src="@obj.img_url"></center>
                      <a asp-action="CarsDetails" asp-route-id="@obj.vehicleID"><button class="details">View Details</button></a>
+                     @* @Html.ActionLink("Delete", "DeleteCar", new { id = @obj.vehicleID })  *@
+                     <a asp-action="DeleteCar" asp-route-id="@obj.vehicleID"><button class="details">Delete</button></a>
                     </div>
                      }
                 </div>

@@ -39,6 +39,27 @@ namespace CarBase.Controllers
             return View(vehiclesList);
         }
 
+        public IActionResult DeleteCar(int id)
+        {
+            // if(id > 0)
+            // {
+            //     var carid = _db.vehicles.Where(x => x.makeID == id).FirstOrDefault();
+            //      if (carid != null)  
+            //         {  
+            //             _db.Entry(carid).State = EntityState.Deleted;  
+            //             _db.SaveChanges();  
+            //         }  
+            //  }  
+            //     return RedirectToAction("Cars");  
+
+            vehicle car = _db.vehicles.Find(id);
+            _db.vehicles.Remove(car);
+            _db.SaveChanges();
+
+            return RedirectToAction("Cars"); 
+        }
+    
+
         //get search
     /*    public IActionResult Cars(string searchName)
         {
@@ -68,7 +89,7 @@ namespace CarBase.Controllers
             ViewBag.engineID = engine.Select(p => new SelectListItem
             {
                 Value = p.engineID.ToString(),
-                Text = p.size,
+                Text = p.size + " " + p.type,
                 Selected = p.engineID == vehicle.engineID,
             });
         }
@@ -76,7 +97,6 @@ namespace CarBase.Controllers
         [HttpGet]
         public IActionResult CarsManage()
         {
-
             vehicle vehicle = new vehicle();
             PopulateLookups(vehicle);
             return View(vehicle);
@@ -102,5 +122,7 @@ namespace CarBase.Controllers
             var vehicles = _db.vehicles.Where(s => s.vehicleID == id).FirstOrDefault();
             return View(vehicles);
         }
+
+        
     }
 }

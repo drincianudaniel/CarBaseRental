@@ -1,0 +1,70 @@
+﻿@model CarBase.Models.vehicle
+
+@{
+    ViewData["Title"] = "CarEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>CarEdit</h1>
+
+<h4>vehicle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CarEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="vehicleID" />
+            <div class="form-group">
+                <label asp-for="Model" class="control-label"></label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="year" class="control-label"></label>
+                <input asp-for="year" class="form-control" />
+                <span asp-validation-for="year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="horsepower" class="control-label"></label>
+                <input asp-for="horsepower" class="form-control" />
+                <span asp-validation-for="horsepower" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rent_status" class="control-label"></label>
+                <input asp-for="rent_status" class="form-control" />
+                <span asp-validation-for="rent_status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="img_url" class="control-label"></label>
+                <input asp-for="img_url" class="form-control" />
+                <span asp-validation-for="img_url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="makeID" class="control-label"></label>
+                <select asp-for="makeID" class="form-control" asp-items="ViewBag.makeID"></select>
+                <span asp-validation-for="makeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="typeID" class="control-label"></label>
+                <select asp-for="typeID" class="form-control" asp-items="ViewBag.typeID"></select>
+                <span asp-validation-for="typeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="engineID" class="control-label"></label>
+                <select asp-for="engineID" class="form-control" asp-items="ViewBag.engineID"></select>
+                <span asp-validation-for="engineID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -39,6 +39,7 @@ namespace CarBase.Controllers
             return View(vehiclesList);
         }
 
+
         public IActionResult DeleteCar(int id)
         {
             // if(id > 0)
@@ -56,7 +57,8 @@ namespace CarBase.Controllers
             _db.vehicles.Remove(car);
             _db.SaveChanges();
 
-            return RedirectToAction("Cars"); 
+    
+            return Redirect(Request.Headers["Referer"]);   
         }
     
 
@@ -123,6 +125,27 @@ namespace CarBase.Controllers
             return View(vehicles);
         }
 
-        
+        [HttpGet]
+        public IActionResult CarEdit(int id)
+        {
+            var vehicle = _db.vehicles.Where(s => s.vehicleID == id).FirstOrDefault();
+            PopulateLookups(vehicle);
+            return View(vehicle);
+        }
+
+        [HttpPost]
+        public IActionResult CarEdit(vehicle vehicle)
+        {
+            if(ModelState.IsValid)
+            {
+                var vehicleaux = _db.vehicles.Where(s => s.vehicleID == vehicle.vehicleID).FirstOrDefault();
+                _db.vehicles.Remove(vehicleaux);
+                _db.vehicles.Add(vehicle);
+                _db.SaveChanges();
+            }
+
+            return RedirectToAction("Cars");
+
+        }
     }
 }

@@ -16,11 +16,26 @@
     background: url("../resources/images/banner-image2.jpg") no-repeat;
     background-size: cover;
     background-position: center;
+    justify-content: center;
+    align-items: center;
 }
 
-.content {
+
+.content{
+    float:left;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    width: 100vw;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding:2%;
+    border-radius: 1rem;
+    color:white;
+}
+
+.back{
+    color: white;
+}
+
+.btn{
+    width: 100%;
 }

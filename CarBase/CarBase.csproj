@@ -5,34 +5,38 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="wwwroot\resources\images\app.png"/>
-    <None Include="wwwroot\resources\images\app1.png"/>
-    <None Include="wwwroot\resources\images\app2.png"/>
-    <None Include="wwwroot\resources\images\app3.png"/>
-    <None Include="wwwroot\resources\images\banner-image.jpg"/>
-    <None Include="wwwroot\resources\images\banner-image2.jpg"/>
-    <None Include="wwwroot\resources\images\car.jpg"/>
-    <None Include="wwwroot\resources\images\carbase.png"/>
-    <None Include="wwwroot\resources\images\carbasewhite.png"/>
-    <None Include="wwwroot\resources\images\carbg.jpg"/>
-    <None Include="wwwroot\resources\images\rent.jpg"/>
-    <None Include="wwwroot\resources\images\rent.png"/>
-    <None Include="wwwroot\resources\images\renting.jpg"/>
+    <None Include="wwwroot\resources\images\app.png" />
+    <None Include="wwwroot\resources\images\app1.png" />
+    <None Include="wwwroot\resources\images\app2.png" />
+    <None Include="wwwroot\resources\images\app3.png" />
+    <None Include="wwwroot\resources\images\banner-image.jpg" />
+    <None Include="wwwroot\resources\images\banner-image2.jpg" />
+    <None Include="wwwroot\resources\images\car.jpg" />
+    <None Include="wwwroot\resources\images\carbase.png" />
+    <None Include="wwwroot\resources\images\carbasewhite.png" />
+    <None Include="wwwroot\resources\images\carbg.jpg" />
+    <None Include="wwwroot\resources\images\rent.jpg" />
+    <None Include="wwwroot\resources\images\rent.png" />
+    <None Include="wwwroot\resources\images\renting.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7"/>
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.3"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3"/>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.2"/>
-    <PackageReference Include="PagedList" Version="1.17.0"/>
-    <PackageReference Include="PagedList.Mvc" Version="4.5.0"/>
-    <PackageReference Include="X.PagedList" Version="8.1.0"/>
-    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.1.0"/>
-    <PackageReference Include="X.PagedList.Web.Common" Version="8.0.7"/>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="PagedList" Version="1.17.0" />
+    <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
+    <PackageReference Include="X.PagedList" Version="8.1.0" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.1.0" />
+    <PackageReference Include="X.PagedList.Web.Common" Version="8.0.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\Interfaces\" />
   </ItemGroup>
 </Project>

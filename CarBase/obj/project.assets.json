@@ -9901,6 +9901,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.3",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.2",
+      "Newtonsoft.Json >= 13.0.1",
       "PagedList >= 1.17.0",
       "PagedList.Mvc >= 4.5.0",
       "X.PagedList >= 8.1.0",
@@ -9972,6 +9973,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[6.0.2, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
           },
           "PagedList": {
             "target": "Package",

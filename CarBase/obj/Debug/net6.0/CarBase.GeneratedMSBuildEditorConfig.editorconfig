@@ -8,65 +8,65 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CarBase
 build_property.RootNamespace = CarBase
-build_property.ProjectDir = f:\facultateanul3sem2\WAD\CarBase\CarBase\
+build_property.ProjectDir = F:\facultateanul3sem2\WAD\CarBase\CarBase\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = f:\facultateanul3sem2\WAD\CarBase\CarBase
+build_property.MSBuildProjectDirectory = F:\facultateanul3sem2\WAD\CarBase\CarBase
 build_property._RazorSourceGeneratorDebug = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Cars/CarEdit.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Cars/CarEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xDYXJFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Cars/Cars.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Cars/Cars.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xDYXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Cars/CarsDetails.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Cars/CarsDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xDYXJzRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Cars/CarsManage.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Cars/CarsManage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fyc1xDYXJzTWFuYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Home/Contact.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Home/desktopapp.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Home/desktopapp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxkZXNrdG9wYXBwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Home/Index.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Registration/login.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Registration/login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cmF0aW9uXGxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Registration/register.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Registration/register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cmF0aW9uXHJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Shared/Error.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Shared/_Layout.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Shared/_ValidationScriptsPartial.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/_ViewImports.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/facultateanul3sem2/WAD/CarBase/CarBase/Views/_ViewStart.cshtml]
+[F:/facultateanul3sem2/WAD/CarBase/CarBase/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

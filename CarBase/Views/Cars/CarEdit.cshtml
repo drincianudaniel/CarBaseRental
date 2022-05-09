@@ -1,5 +1,65 @@
 ﻿@model CarBase.Models.vehicle
 
+@section Scripts {
+    <script type="text/javascript">
+        function populateEngines() {
+            $.ajax({
+                url: "/Cars/PopulateEngines",
+                type: "GET",
+                success: function (response) { 
+                    response["$values"].forEach(function (element) {
+                        console.log(element.type + " " + element.size)
+                        //$("#enginesSelect").append("<option>" + element.type + " " + element.size + "</option>");
+                        var id = element.engineID;
+                        $("#enginesSelect").append("<option value ='"+ id +"'>" + element.type + " " + element.size + "</option>");
+                    });
+                },
+                error: function () {
+                    $("#enginesSelect").empty();
+                }
+            });
+        }
+
+          function populateMakes() {
+            $.ajax({
+                url: "/Cars/PopulateMakes",
+                type: "GET",
+                success: function (response) {
+                    response["$values"].forEach(function (element) {
+                        var id = element.makeID;
+                        $("#makeSelect").append("<option value = '"+ id +"'>" + element.name + "</option>");
+                    });
+                },
+                error: function () {
+                    $("#makeSelect").empty();
+                }
+            });
+        }
+
+          function PopulateTypes() {
+            $.ajax({
+                url: "/Cars/PopulateTypes",
+                type: "GET",
+                success: function (response) { 
+                    response["$values"].forEach(function (element) {
+                        @* $("#typeSelect").append("<option>" + element.name  + "</option>"); *@
+                        var id = element.typeID;
+                        $("#typeSelect").append("<option value = '" + id + "''>" + element.name  + "</option>");
+                    });
+                },
+                error: function () {
+                    $("#typeSelect").empty();
+                }
+            });
+        }
+@* 
+        $("#locationTypeSelect").on('change', populateEngines);
+        $("#makesTypeSelect").on('change', populateMakes); *@
+        populateEngines();
+        populateMakes();
+        PopulateTypes();
+    </script>
+}
 @{
     ViewData["Title"] = "CarEdit";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -44,17 +104,17 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="makeID" class="control-label"></label> <br>
-                        <select asp-for="makeID" class="form-control" asp-items="ViewBag.makeID"></select>
+                        <select id="makeSelect" asp-for="makeID" class="form-control" asp-items="ViewBag.makeID"></select>
                         <span asp-validation-for="makeID" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="typeID" class="control-label"></label> <br>
-                        <select asp-for="typeID" class="form-control" asp-items="ViewBag.typeID"></select>
+                        <select id="typeSelect" asp-for="typeID" class="form-control" asp-items="ViewBag.typeID"></select>
                         <span asp-validation-for="typeID" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="engineID" class="control-label"></label> <br>
-                        <select asp-for="engineID" class="form-control" asp-items="ViewBag.engineID"></select>
+                        <select id= "enginesSelect" asp-for="engineID" class="form-control" asp-items="ViewBag.engineID"></select>
                         <span asp-validation-for="engineID" class="text-danger"></span>
                     </div>
                     <div class="form-group">
@@ -69,7 +129,3 @@
         </div>
     </div>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

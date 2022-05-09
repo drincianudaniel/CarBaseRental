@@ -37,11 +37,6 @@ namespace CarBase.Controllers
             return Json(vehicles);
         }
 
-        public IActionResult CarsManage()
-        {
-            return View();
-        }
-
         public IActionResult PopulateEngines()
         {
             var engines = _engineService.PopulateEngine();
@@ -60,29 +55,17 @@ namespace CarBase.Controllers
             return Json(types);
         }
 
-        [HttpPost]
-        public IActionResult AddCar(vehicle vehicle)
+        public IActionResult CarsManage()
         {
-            // _locationService.AddVehicle(vehicle);
-            // return Json(vehicle);
+            return View();
+        }
 
-            try
-            {
-                if (vehicle is null)
-                {
-                    return BadRequest("Owner object is null");
-                }
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest("Invalid model object");
-                }
-                _locationService.AddVehicle(vehicle);
-                return Json(vehicle);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Internal server error");
-            }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CarsManage(vehicle vehicle)
+        {
+            _locationService.AddVehicle(vehicle);
+            return RedirectToAction("Cars");
         }
         //get
         // public IActionResult Cars(string searchName, int? page)
@@ -108,27 +91,13 @@ namespace CarBase.Controllers
         //     return View(vehiclesList);
         // }
 
-
-    //     public IActionResult DeleteCar(int id)
-    //     {
-    //         // if(id > 0)
-    //         // {
-    //         //     var carid = _db.vehicles.Where(x => x.makeID == id).FirstOrDefault();
-    //         //      if (carid != null)  
-    //         //         {  
-    //         //             _db.Entry(carid).State = EntityState.Deleted;  
-    //         //             _db.SaveChanges();  
-    //         //         }  
-    //         //  }  
-    //         //     return RedirectToAction("Cars");  
-
-    //         vehicle car = _db.vehicles.Find(id);
-    //         _db.vehicles.Remove(car);
-    //         _db.SaveChanges();
-
-    
-    //         return Redirect(Request.Headers["Referer"]);   
-    //     }
+        public IActionResult DeleteCar(int id)
+        {   
+            var vehicle = new vehicle();
+            vehicle = _locationService.FindID(id);
+            _locationService.DeleteVehicle(vehicle);
+            return RedirectToAction("Cars");
+        }
     
 
     //     //get search
@@ -137,33 +106,6 @@ namespace CarBase.Controllers
     //         var vehicles = _db.vehicles.Include("make").Where(v => v.Model.Contains(searchName)).ToList();
     //         return View(vehicles);
     //     }*/
-
-    //     private void PopulateLookups(vehicle vehicle)
-    //     {
-    //         var make = _db.makes.OrderBy(p => p.name).ToList();
-    //         ViewBag.makeID = make.Select(p => new SelectListItem
-    //         {
-    //             Value = p.makeID.ToString(),
-    //             Text = p.name,
-    //             Selected = p.makeID == vehicle.makeID,
-    //         });
-
-    //         var type = _db.types.OrderBy(p => p.name).ToList();
-    //         ViewBag.typeID = type.Select(p => new SelectListItem
-    //         {
-    //             Value = p.typeID.ToString(),
-    //             Text = p.name,
-    //             Selected = p.typeID == vehicle.typeID,
-    //         });
-
-    //         var engine = _db.engines.OrderBy(p => p.size).ToList();
-    //         ViewBag.engineID = engine.Select(p => new SelectListItem
-    //         {
-    //             Value = p.engineID.ToString(),
-    //             Text = p.size + " " + p.type,
-    //             Selected = p.engineID == vehicle.engineID,
-    //         });
-    //     }
 
     //     [HttpGet]
     //     public IActionResult CarsManage()
@@ -188,33 +130,30 @@ namespace CarBase.Controllers
     //         return View(vehicle);
     //     }
 
-    //     public IActionResult CarsDetails(int id)
-    //     {
-    //         var vehicles = _db.vehicles.Include("make").Include("type").Include("engine").Where(s => s.vehicleID == id).FirstOrDefault();
-    //         return View(vehicles);
-    //     }
+        public IActionResult CarsDetails(int id)
+        {
+            // var vehicles = _db.vehicles.Include("make").Include("type").Include("engine").Where(s => s.vehicleID == id).FirstOrDefault();
+            // return View(vehicles);
+            var vehicle = new vehicle();
+            vehicle = _locationService.FindID(id);
+            return View(vehicle);
+        }
 
-    //     [HttpGet]
-    //     public IActionResult CarEdit(int id)
-    //     {
-    //         var vehicle = _db.vehicles.Where(s => s.vehicleID == id).FirstOrDefault();
-    //         PopulateLookups(vehicle);
-    //         return View(vehicle);
-    //     }
+        [HttpGet]
+        public IActionResult CarEdit(int id)
+        {
+           var vehicle = new vehicle();
+            vehicle = _locationService.FindID(id);
+            return View(vehicle);
+        }
 
-    //     [HttpPost]
-    //     public IActionResult CarEdit(vehicle vehicle)
-    //     {
-    //         if(ModelState.IsValid)
-    //         {
-    //             var vehicleaux = _db.vehicles.Where(s => s.vehicleID == vehicle.vehicleID).FirstOrDefault();
-    //             _db.vehicles.Remove(vehicleaux);
-    //             _db.vehicles.Add(vehicle);
-    //             _db.SaveChanges();
-    //         }
+        [HttpPost]
+        public IActionResult CarEdit(vehicle vehicle)
+        {
 
-    //         return RedirectToAction("Cars");
+            _locationService.UpdateVehicle(vehicle);
+            return RedirectToAction("Cars");
 
-    //     }
+        }
     }
 }

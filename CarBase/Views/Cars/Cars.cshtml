@@ -1,4 +1,6 @@
-﻿@{
+﻿@model CarBase.Models.vehicle
+
+@{
     ViewBag.Title = "Cars";
 }
 
@@ -15,8 +17,7 @@
                     response["$values"].forEach(function(value)
                     {
                         console.log(value.engine.size);
-                         $(".cars").append('<div class="card"> <ul class = "body"> <li class="header"> '+ '<li class = "author">'+ value.model + '</li>' +  '<li class = "author">'+ value.engine.type + value.engine.size + '</li>' + '<li class = "author">'+ value.type.name + '</li>' + '</li> </ul> <center> <img class="imagine" src="'+ value.img_url +'"> </center> </div>');
-    
+                         $(".cars").append('<div class="card"> <ul class = "body"> <li class="header"> '+ '<li class = "author">'+ value.make.name + '</li>' + '<li class = "author">'+ value.model + '</li>' +  '<li class = "author">'+ value.engine.type + " " + value.engine.size + '</li>' + '<li class = "author">'+ value.type.name + '</li>' + '</li> </ul> <center> <img class="imagine" src="'+ value.img_url +'"> </center> <a href="/Cars/DeleteCar/'+ value.vehicleID +'">Delete</a> <a href="/Cars/CarsDetails/'+ value.vehicleID +'" ><button class="details">View Details</button></a> </div>');
                     });
                 },
                 error: function (error) {
@@ -68,8 +69,7 @@
                 </div>
             </div> *@
             <div class = "user-cards">
-                <div class="border-cards cars">
-
+                <div class="border-cards cars delete">
                 </div>
             </div>
 

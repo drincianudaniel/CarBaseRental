@@ -7,5 +7,8 @@ namespace CarBase.Services.Interfaces
     {
         List<vehicle> GetVehicle();
         void AddVehicle(vehicle vehicle);
+        vehicle FindID(int id);
+        void DeleteVehicle(vehicle vehicle);
+        void UpdateVehicle(vehicle vehicle);
     }
 }

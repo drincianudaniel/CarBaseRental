@@ -6,7 +6,7 @@ namespace CarBase.Repositories.Interfaces
     {
         IQueryable<T> getAll();
         IQueryable<T> FindAll(Expression<Func<T, object>> criteria1, Expression<Func<T, object>> criteria2, Expression<Func<T, object>> criteria3);
-        IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression);
+        T FindByCondition(Expression<Func<T, bool>> expression, Expression<Func<T, object>> criteria1, Expression<Func<T, object>> criteria2, Expression<Func<T, object>> criteria3);
         void Create(T entity);
         void Update(T entity);
         void Delete(T entity);

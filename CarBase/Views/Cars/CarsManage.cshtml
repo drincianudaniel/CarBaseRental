@@ -10,11 +10,13 @@
                 success: function (response) { 
                     response["$values"].forEach(function (element) {
                         console.log(element.type + " " + element.size)
-                        $("#locationsSelect").append("<option>" + element.type + " " + element.size + "</option>");
+                        //$("#enginesSelect").append("<option>" + element.type + " " + element.size + "</option>");
+                        var id = element.engineID;
+                        $("#enginesSelect").append("<option value ='"+ id +"'>" + element.type + " " + element.size + "</option>");
                     });
                 },
                 error: function () {
-                    $("#locationsSelect").empty();
+                    $("#enginesSelect").empty();
                 }
             });
         }
@@ -25,7 +27,8 @@
                 type: "GET",
                 success: function (response) {
                     response["$values"].forEach(function (element) {
-                        $("#makeSelect").append("<option>" + element.name + "</option>");
+                        var id = element.makeID;
+                        $("#makeSelect").append("<option value = '"+ id +"'>" + element.name + "</option>");
                     });
                 },
                 error: function () {
@@ -40,7 +43,9 @@
                 type: "GET",
                 success: function (response) { 
                     response["$values"].forEach(function (element) {
-                        $("#typeSelect").append("<option>" + element.name  + "</option>");
+                        @* $("#typeSelect").append("<option>" + element.name  + "</option>"); *@
+                        var id = element.typeID;
+                        $("#typeSelect").append("<option value = '" + id + "''>" + element.name  + "</option>");
                     });
                 },
                 error: function () {
@@ -85,16 +90,25 @@
                     </div>
                          <div class="form-group">
                         <label asp-for="makeID" class="control-label"></label> <br>
-                        <select id = "makeSelect"></select>
+                        <select id = "makeSelect" asp-for="makeID"></select>
                     </div>
                     <div class="form-group">
                         <label asp-for="typeID" class="control-label"></label> <br>
-                        <select id ="typeSelect"></select>
+                        <select id ="typeSelect" asp-for="typeID"></select>
                     </div>
                     <div class="form-group">
                         <label asp-for="engineID" class="control-label"></label> <br>
-                        <select id="locationsSelect"></select>
+                        <select id="enginesSelect" asp-for="engineID"></select>
                     </div>
+                    @* <div class="form-group">
+                        <input asp-for="engineID" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="makeID" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="typeID" class="form-control" />
+                    </div> *@
                     <div class="form-group">
                         <label asp-for="horsepower" class="control-label"></label> <br>
                         <input asp-for="horsepower" class="form-control" />

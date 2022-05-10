@@ -6,17 +6,26 @@
 
 @section Scripts{
      <script type="text/javascript">
+     $(function(){
+         GetVehicles();
+         $("#SearchButton").click(function(){
+             GetVehicles();
+         });
+     });
         function GetVehicles() {
+            var searchName = $.trim($("#txtsearchName").val());
+
             $.ajax({
-                url: "/Cars/GetAllCars",
+                url: `/Cars/searchCars/${searchName}`,
                 type: "GET",
+                contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (response) {
                     console.log(response);
                     console.log(response["$values"]);
+                    $(".cars").html("");
                     response["$values"].forEach(function(value)
                     {
-                        console.log(value.engine.size);
                          $(".cars").append('<div class="card"> <ul class = "body"> <li class="header"> '+ '<li class = "author">'+ value.make.name + '</li>' + '<li class = "author">'+ value.model + '</li>' +  '<li class = "author">'+ value.engine.type + " " + value.engine.size + '</li>' + '<li class = "author">'+ value.type.name + '</li>' + '</li> </ul> <center> <img class="imagine" src="'+ value.img_url +'"> </center> <a href="/Cars/DeleteCar/'+ value.vehicleID +'">Delete</a> <a href="/Cars/CarsDetails/'+ value.vehicleID +'" ><button class="details">View Details</button></a> </div>');
                     });
                 },
@@ -26,7 +35,6 @@
                 }
             });
         }
-        GetVehicles();
     </script>
 }
 <html lang="en">
@@ -44,14 +52,12 @@
         <div class="content"> 
             <div class="searchbox">
                 @*<input class= "searchbar" type="search" id="search" onblur="getVal()" data-search>*@
-                <form action="/Cars/Cars" method="post">
                     @*@Html.TextBox("searchName")*@
                     @*<input type="submit" value="Search" class="searchb"/>*@
-                    <input class="searchbar" id="searchName" name="searchName" type="text" value=""> 
+                    <input class="searchbar" id="txtsearchName" name="searchName" type="text" value=""> 
                     <button class="searchb" id = "SearchButton"> Search </button>
-               </form>
-                <a asp-controller="Cars" asp-action="CarsManage"><button class="searchb" >Insert Car</button></a>
             </div>
+                      <a asp-controller="Cars" asp-action="CarsManage"><button class="searchb" >Insert Car</button></a>
             @* <div class="user-cards">
                 <div class="border-cards">
                     <div class="card">

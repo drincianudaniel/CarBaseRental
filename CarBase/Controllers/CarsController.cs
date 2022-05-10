@@ -26,17 +26,23 @@ namespace CarBase.Controllers
             _typeService = typeService;
         }
 
+        [HttpGet]
         public IActionResult Cars([FromServices] ILog log){
             log.Info("Executing /Home/Index");
             return View();
         }
 
-        [HttpGet]
         public IActionResult GetAllCars(){
             var vehicles = _locationService.GetVehicle();
             return Json(vehicles);
         }
 
+        [HttpGet]
+        [Route("Cars/searchCars/{search?}")]
+        public IActionResult searchCars(String search){
+            var vehicles = _locationService.searchVehicle(search);
+            return Json(vehicles);
+        }
         public IActionResult PopulateEngines()
         {
             var engines = _engineService.PopulateEngine();

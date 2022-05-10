@@ -24,6 +24,10 @@ namespace CarBase.Repositories
 
         }
 
+        public IQueryable<T> FindAllWhere(Expression<Func<T, object>> criteria1, Expression<Func<T, object>> criteria2, Expression<Func<T, object>> criteria3, Expression<Func<T, bool>> expression)
+        {
+            return this.LocationContext.Set<T>().Include(criteria1).Include(criteria2).Include(criteria3).Where(expression).AsNoTracking();
+        }
         public T FindByCondition(Expression<Func<T, bool>> expression, Expression<Func<T, object>> criteria1, Expression<Func<T, object>> criteria2, Expression<Func<T, object>> criteria3)
         {
             return this.LocationContext.Set<T>().Include(criteria1).Include(criteria2).Include(criteria3).Where(expression).FirstOrDefault();

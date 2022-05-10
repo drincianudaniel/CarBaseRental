@@ -10,5 +10,6 @@ namespace CarBase.Services.Interfaces
         vehicle FindID(int id);
         void DeleteVehicle(vehicle vehicle);
         void UpdateVehicle(vehicle vehicle);
+        List<vehicle> searchVehicle(string searchName);
     }
 }

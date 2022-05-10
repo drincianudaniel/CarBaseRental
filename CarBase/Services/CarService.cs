@@ -20,6 +20,11 @@ namespace CarBase.Services
             return vehicles;
         }
 
+        public List<vehicle> searchVehicle(string searchName){
+            var vehicles = new List<vehicle>();
+            vehicles = _repositoryWrapper.CarRepository.FindAllWhere(e=> e.engine, e=> e.make, e=> e.type, e => e.Model.Contains(searchName) || searchName == null || searchName=="" || e.make.name.Contains(searchName)).ToList();   
+            return vehicles;
+        }
         public vehicle FindID(int id){
             var vehicle = new vehicle();
             vehicle = _repositoryWrapper.CarRepository.FindByCondition(x => x.vehicleID == id, e=> e.engine, e=> e.make, e=> e.type);

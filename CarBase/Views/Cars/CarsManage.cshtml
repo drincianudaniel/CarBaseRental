@@ -80,12 +80,12 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="Model" class="control-label"></label> <br>
-                        <input asp-for="Model" class="form-control" />
+                        <input asp-for="Model" class="form-control" autocomplete="off"/>
                         <span asp-validation-for="Model" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="year" class="control-label"></label> <br>
-                        <input asp-for="year" class="form-control" />
+                        <input asp-for="year" class="form-control" autocomplete="off"/>
                         <span asp-validation-for="year" class="text-danger"></span>
                     </div>
                          <div class="form-group">
@@ -111,17 +111,17 @@
                     </div> *@
                     <div class="form-group">
                         <label asp-for="horsepower" class="control-label"></label> <br>
-                        <input asp-for="horsepower" class="form-control" />
+                        <input asp-for="horsepower" class="form-control" autocomplete="off"/>
                         <span asp-validation-for="horsepower" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="rent_status" class="control-label"></label> <br>
-                        <input asp-for="rent_status" class="form-control" />
+                        <input asp-for="rent_status" class="form-control" autocomplete="off"/>
                         <span asp-validation-for="rent_status" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="img_url" class="control-label"></label> <br>
-                        <input asp-for="img_url" class="form-control" />
+                        <input asp-for="img_url" class="form-control" autocomplete="off"/>
                         <span asp-validation-for="img_url" class="text-danger"></span>
                     </div>
                     <div class="form-group">
@@ -133,33 +133,6 @@
             <a class="back" asp-action="Cars">Back to List</a>
             </div>
         </div>
-
-       
-
-         @* <table style="margin-top:100px;" class="table">
-        <thead>
-            <tr>
-            <th scope="col">vehicleID</th>
-            <th scope="col">Model</th>
-            <th scope="col">Year</th>
-            <th scope="col">HorsePower</th>
-            <th scope="col">RentStatus</th>
-            </tr>
-        </thead>
-        <tbody>
-                @foreach(var obj in Model)
-                {
-                    <tr>
-                        <td>@obj.vehicleID</td>
-                        <td>@obj.Model</td>   
-                        <td>@obj.year</td>
-                        <td>@obj.horsepower</td>
-                        <td>@obj.rent_status</td>
-                    </tr>
-                }
-        </tbody>
-        </table> *@
-         
     </div>
 </div>
 

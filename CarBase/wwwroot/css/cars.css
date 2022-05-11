@@ -222,8 +222,12 @@ input {
     /* align-items: center; */
     flex-direction: column;
     float: left;
+    width: 15%;
+    margin-top: 50px;
 }
-
+.subheader a{
+    font-size: large;
+}
 .columns{
     display: flex;
     flex-direction: row;
@@ -232,6 +236,11 @@ input {
 .columns a{
     text-decoration: none;
     color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.columns a:hover{
+    color: gray;
 }
 
 @media(max-width: 991px){
@@ -246,6 +255,12 @@ input {
     .user-cards {
         padding: 10px;
         width: 100%;
+    }
+    .columns{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
     }
     
 }

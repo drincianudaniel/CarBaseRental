@@ -73,30 +73,7 @@ namespace CarBase.Controllers
             _locationService.AddVehicle(vehicle);
             return RedirectToAction("Cars");
         }
-        //get
-        // public IActionResult Cars(string searchName, int? page)
-        // {
-
-        //     /*   var join = from m in _db.makes
-        //                   join v in _db.vehicles
-        //                   on m.makeID equals v.makeID
-        //                   select new VehicleMake
-        //                   {
-        //                       makename = makes.name
-        //                   };
-
-        //       join.ToList();*/
-
-        //     /*IEnumerable<vehicle> vehicleList = _db.vehicles.ToList();*/
-
-        //     /*var vehicles = _db.vehicles.OrderBy(x => x.vehicleID).ToList();*/
-
-        //     var pageNumber = page ?? 1;
-        //     var pageSize = 8;
-        //     var vehiclesList = _db.vehicles.Include("make").Include("type").Include("engine").Where(v => v.Model.Contains(searchName) || searchName == null || v.make.name.Contains(searchName) ).OrderBy(x => x.vehicleID)/*Where(x => x.Model == "ilx")*/.ToList().ToPagedList(pageNumber, pageSize);
-        //     return View(vehiclesList);
-        // }
-
+        
         public IActionResult DeleteCar(int id)
         {   
             var vehicle = new vehicle();
@@ -104,42 +81,9 @@ namespace CarBase.Controllers
             _locationService.DeleteVehicle(vehicle);
             return RedirectToAction("Cars");
         }
-    
-
-    //     //get search
-    // /*    public IActionResult Cars(string searchName)
-    //     {
-    //         var vehicles = _db.vehicles.Include("make").Where(v => v.Model.Contains(searchName)).ToList();
-    //         return View(vehicles);
-    //     }*/
-
-    //     [HttpGet]
-    //     public IActionResult CarsManage()
-    //     {
-    //         vehicle vehicle = new vehicle();
-    //         PopulateLookups(vehicle);
-    //         return View(vehicle);
-
-    //     }
-
-    //     [HttpPost]
-    //     [ValidateAntiForgeryToken]
-    //     public IActionResult CarsManage(vehicle vehicle)
-    //     {
-    //         if (ModelState.IsValid)
-    //         {
-    //             _db.vehicles.Add(vehicle);
-    //             _db.SaveChanges();
-    //             return RedirectToAction("Cars");
-    //         }
-    //         PopulateLookups(vehicle);
-    //         return View(vehicle);
-    //     }
 
         public IActionResult CarsDetails(int id)
         {
-            // var vehicles = _db.vehicles.Include("make").Include("type").Include("engine").Where(s => s.vehicleID == id).FirstOrDefault();
-            // return View(vehicles);
             var vehicle = new vehicle();
             vehicle = _locationService.FindID(id);
             return View(vehicle);

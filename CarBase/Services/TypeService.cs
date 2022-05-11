@@ -20,5 +20,9 @@ namespace CarBase.Services
             type = _repositoryWrapper.TypeRepository.getAll().ToList();
             return type;
         }
+        public void AddType(type type){
+            _repositoryWrapper.TypeRepository.Create(type);
+            _repositoryWrapper.Save();
+        }
     }
 }

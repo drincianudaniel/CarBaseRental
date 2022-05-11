@@ -8,7 +8,7 @@
      <script type="text/javascript">
      $(function(){
          GetVehicles();
-         $("#SearchButton").click(function(){
+         $("#txtsearchName").keyup(function(){
              GetVehicles();
          });
      });
@@ -48,16 +48,19 @@
     <title>CarBase Rental</title>
 </head>
 <body>
+
+
  <div class="banner">
+
         <div class="content"> 
             <div class="searchbox">
                 @*<input class= "searchbar" type="search" id="search" onblur="getVal()" data-search>*@
                     @*@Html.TextBox("searchName")*@
                     @*<input type="submit" value="Search" class="searchb"/>*@
                     <input class="searchbar" id="txtsearchName" name="searchName" type="text" value=""> 
-                    <button class="searchb" id = "SearchButton"> Search </button>
+                    @* <button class="searchb" id = "SearchButton"> Search </button> *@
             </div>
-                      <a asp-controller="Cars" asp-action="CarsManage"><button class="searchb" >Insert Car</button></a>
+                      @* <a asp-controller="Cars" asp-action="CarsManage"><button class="searchb" >Insert Car</button></a> *@
             @* <div class="user-cards">
                 <div class="border-cards">
                     <div class="card">
@@ -74,11 +77,19 @@
                     </div>
                 </div>
             </div> *@
-            <div class = "user-cards">
-                <div class="border-cards cars delete">
+            <div class="columns">
+                <div class="subheader">
+                    <a asp-controller="Cars" asp-action="CarsManage">Insert Car</a>
+                    <a asp-controller="Cars" asp-action="EngineInsert">Insert Engine</a>
+                    <a asp-controller="Cars" asp-action="MakeInsert">Insert Make</a>
+                    <a asp-controller="Cars" asp-action="TypeInsert">Insert Type</a>
+                </div>
+
+                    <div class = "user-cards">
+                        <div class="border-cards cars delete">
+                    </div>
                 </div>
             </div>
-
             </div>
         </div>
     </div>

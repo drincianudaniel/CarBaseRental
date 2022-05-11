@@ -6,5 +6,6 @@ namespace CarBase.Services.Interfaces
     public interface ITypeService
     {
         List<type> PopulateType();
+        void AddType(type type);
     }
 }

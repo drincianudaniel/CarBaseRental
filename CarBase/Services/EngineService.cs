@@ -20,5 +20,10 @@ namespace CarBase.Services
             engine = _repositoryWrapper.EngineRepository.getAll().ToList();
             return engine;
         }
+
+        public void AddEngine(engine engine){
+            _repositoryWrapper.EngineRepository.Create(engine);
+            _repositoryWrapper.Save();
+        }
     }
 }

@@ -161,5 +161,48 @@ namespace CarBase.Controllers
             return RedirectToAction("Cars");
 
         }
+
+        [HttpGet]
+        public IActionResult EngineInsert()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EngineInsert(engine engine)
+        {
+            _engineService.AddEngine(engine);
+            return RedirectToAction("EngineInsert");
+        }
+
+        [HttpGet]
+        public IActionResult MakeInsert()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult MakeInsert(make make)
+        {
+            _makeService.AddMake(make);
+            return RedirectToAction("MakeInsert");
+        }
+
+        
+        [HttpGet]
+        public IActionResult TypeInsert()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult TypeInsert(type type)
+        {
+            _typeService.AddType(type);
+            return RedirectToAction("TypeInsert");
+        }
     }
 }

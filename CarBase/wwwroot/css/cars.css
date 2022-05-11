@@ -37,7 +37,6 @@ form{
     margin-right: 100px;
 }
 .searchbar{
-    width: 80%;
     height: 30px;
 }
 .searchb{
@@ -217,6 +216,24 @@ input {
 .detailspress{
     text-decoration: none;
 }
+
+.subheader{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    float: left;
+}
+
+.columns{
+    display: flex;
+    flex-direction: row;
+}
+
+.columns a{
+    text-decoration: none;
+    color: white;
+}
+
 @media(max-width: 991px){
     .banner{
         flex-direction: column;

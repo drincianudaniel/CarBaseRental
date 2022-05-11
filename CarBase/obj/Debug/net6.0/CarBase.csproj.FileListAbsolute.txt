@@ -278,3 +278,7 @@ F:\facultateanul3sem2\WAD\CarBase\CarBase\bin\Debug\net6.0\Microsoft.AspNetCore.
 F:\facultateanul3sem2\WAD\CarBase\CarBase\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 F:\facultateanul3sem2\WAD\CarBase\CarBase\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 F:\facultateanul3sem2\WAD\CarBase\CarBase\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+F:\facultateanul3sem2\WAD\CarBase\CarBase\bin\Debug\net6.0\Microsoft.OpenApi.dll
+F:\facultateanul3sem2\WAD\CarBase\CarBase\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\facultateanul3sem2\WAD\CarBase\CarBase\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\facultateanul3sem2\WAD\CarBase\CarBase\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll

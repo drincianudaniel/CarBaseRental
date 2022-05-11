@@ -20,5 +20,10 @@ namespace CarBase.Services
             make = _repositoryWrapper.MakeRepository.getAll().ToList();
             return make;
         }
+
+        public void AddMake(make make){
+            _repositoryWrapper.MakeRepository.Create(make);
+            _repositoryWrapper.Save();
+        }
     }
 }

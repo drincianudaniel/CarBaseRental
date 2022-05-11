@@ -6,5 +6,6 @@ namespace CarBase.Services.Interfaces
     public interface IMakeService
     {
         List<make> PopulateMake();
+        void AddMake(make make);
     }
 }

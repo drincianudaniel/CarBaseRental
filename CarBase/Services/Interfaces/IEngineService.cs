@@ -6,5 +6,6 @@ namespace CarBase.Services.Interfaces
     public interface IEngineService
     {
         List<engine> PopulateEngine();
+        void AddEngine(engine engine);
     }
 }
